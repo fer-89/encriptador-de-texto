@@ -9,6 +9,7 @@ const mensajeEncriptado = document.querySelector(".resultado__campo__texto__encr
 const divVacio = document.getElementById("resultado__campo__vacio");
 const divResultado = document.getElementById("resultado__campo__texto");
 const llavesDeEncriptacion = [["e", "enter"],["i", "imes"], ["a", "ai"],["o", "ober"],["u", "ufat"]];
+const regex = new RegExp("[^abcdefghijklmnñopqrstuvwxyz!¡¿?,. ]");
 
 function btnEncriptar() {
     if (validarCaracteres(mensaje.value) == true){
@@ -18,8 +19,9 @@ function btnEncriptar() {
         divResultado.style.display = "initial";
     }
     else {
-        alert("No se aceptan tildes, revisa tu mensaje.");
+        alert("Solo se aceptan caracteres a-z , . ¡! y ¿?, revisa tu mensaje!");
         mensaje.value = "";
+        mensajeEncriptado.innerHTML = "";
     }
 }
 
@@ -41,8 +43,9 @@ function btnDesencriptar() {
         divResultado.style.display = "initial";
     }
     else {
-        alert("No se aceptan tildes, revisa tu mensaje.");
+        alert("Solo se aceptan caracteres a-z , . ¡! y ¿?, revisa tu mensaje!");
         mensaje.value = "";
+        mensajeEncriptado.innerHTML = "";
     }
 }
 
@@ -57,7 +60,9 @@ function funcionDesencriptar (mensajeDesencriptar) {
 }
 
 function validarCaracteres(mensaje) {
-    if (mensaje.includes("á") || mensaje.includes("é") || mensaje.includes("í") || mensaje.includes("ó") || mensaje.includes("ú")) {
+    // Validar si mensaje contiene caracteres especiales
+    if (regex.test(mensaje) == true) {
+        console.log("contiene caracteres especiales");
         return false;
     }
     return true;
