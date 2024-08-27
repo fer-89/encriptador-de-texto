@@ -10,5 +10,5 @@ Este es un Encriptador/Desencriptador de texto.
 1. Botón Encriptar, permite encriptar un mensaje introducido por el usuario
 2. Botón Desencriptar, permite desencriptar un mensaje introducido por el usuario
 3. Botón Copiar, permite copiar el mensaje encriptado/desencriptado para posteriormente usar el mensaje para encriptarlo/desencriptarlo
-4. No se permiten tildes y el mensaje siempre está escrito en letras minúsculas
+4. Los caracteres permitidos son "a-z ¡! ¿? . ," y el mensaje siempre está escrito en letras minúsculas
 
